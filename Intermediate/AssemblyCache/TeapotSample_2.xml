@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TeapotSample_2</name>
+    </assembly>
+    <members>
+        <member name="M:TeapotSample.App.OnActivated">
+            <summary>
+            Called when [activated].
+            </summary>
+        </member>
+        <member name="M:TeapotSample.App.OnDeactivate">
+            <summary>
+            Called when [deactivate].
+            </summary>
+        </member>
+        <member name="F:TeapotSample.WaveContent.Assets.Textures.metal_diffuse_png">
+            <summary> Path to Content/Assets/Textures/metal_diffuse.png </summary>
+        </member>
+        <member name="F:TeapotSample.WaveContent.Assets.Textures.metal_normal_png">
+            <summary> Path to Content/Assets/Textures/metal_normal.png </summary>
+        </member>
+        <member name="F:TeapotSample.WaveContent.Assets.Materials.MetalMaterial">
+            <summary> Path to Content/Assets/Materials/MetalMaterial.wmat </summary>
+        </member>
+        <member name="F:TeapotSample.WaveContent.Scenes.MyScene">
+            <summary> Path to Content/Scenes/MyScene.wscene </summary>
+        </member>
+    </members>
+</doc>

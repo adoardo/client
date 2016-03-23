@@ -1,0 +1,19 @@
+﻿<GenerateInfo xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="WaveEditor.Exporter.Model">
+  <files xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+    <d2p1:KeyValueOfstringFileHashesH8kexHFU>
+      <d2p1:Key>18a48d66c1b1d2b9f6c1d2e25aef1970</d2p1:Key>
+      <d2p1:Value>
+        <FileHash>2295c6f51349283d83e569cbdc2299ec</FileHash>
+        <WinfoHash>71f65b9b764bf52fa4026ae0c6ba1248</WinfoHash>
+      </d2p1:Value>
+    </d2p1:KeyValueOfstringFileHashesH8kexHFU>
+    <d2p1:KeyValueOfstringFileHashesH8kexHFU>
+      <d2p1:Key>e3cf4941b500fad25337e605525e979d</d2p1:Key>
+      <d2p1:Value>
+        <FileHash>b97c66ac066f93c4881031033584bdeb</FileHash>
+        <WinfoHash>1732c40855956916dfe6c2f39a427a26</WinfoHash>
+      </d2p1:Value>
+    </d2p1:KeyValueOfstringFileHashesH8kexHFU>
+  </files>
+  <id>178BFBFF00600F12</id>
+</GenerateInfo>

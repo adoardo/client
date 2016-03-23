@@ -1,0 +1,43 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"> 
+  <PropertyGroup>
+	<FilesToXapDependsOn>$(FilesToXapDependsOn);FilteringXMLFiles</FilesToXapDependsOn>	
+	<XapPackagerDependsOn>WaveExporterExecution;IncludeContentFileInXapFile;$(XapPackagerDependsOn)</XapPackagerDependsOn>
+  </PropertyGroup>
+  
+  <Target Name="BeforeBuild">
+	<Message Text="********** Constants process Begin **********"/>
+	<Exec Command='"$(WaveEngine)v2.0\Tools\VisualEditor\WaveConstantsCMD.exe" -i "$(SolutionDir)$(ProjectName).weproj" -o "$(SolutionDir)SharedSource\Main"'/>    
+	<Message Text="********** Constants process End **********"/>
+  </Target>
+  
+  <Target Name="FilteringXMLFiles">
+	<ItemGroup>
+		<FilteredPackagingOutputs Remove="@(FilteredPackagingOutputs)" Condition="'%(FilteredPackagingOutputs.OutputGroup)' == 'CopyLocalFilesOutputGroup' AND '%(FilteredPackagingOutputs.Extension)' == '.xml'"/>
+	</ItemGroup>
+  </Target>
+  
+  <Target Name="WaveExporterExecution">
+    <Message Text="********** Asset Export process Begin **********"/>        	
+	<Exec Command='"$(WaveEngine)v2.0\Tools\VisualEditor\WaveExporterCMD.exe" -m Project -t WindowsPhone -i "$(SolutionDir)$(ProjectName).weproj" -o "$(SolutionDir)Intermediate\Content\WindowsPhone"'/>    
+	<Exec Command='xcopy /E /I /Y "$(SolutionDir)Intermediate\Content\WindowsPhone\*.*" "$(TargetDir)\Content\"'/>
+	<Message Text="********** Asset Export process End **********"/>    
+  </Target>  
+  
+  <Target Name="IncludeContentFileInXapFile">
+	<Message Text="********** Include Content Files In Xap File **********"/>    	
+	<ItemGroup>
+		<WPKFiles Include="$(TargetDir)\Content\**\*.*"/>   
+	</ItemGroup>
+	<AssignTargetPath Files="@(WPKFiles)" RootFolder="$(TargetDir)">
+        <Output TaskParameter="AssignedFiles" ItemName="WPKWithTargetPath" />
+    </AssignTargetPath>	 
+	<ItemGroup>	 	 
+	  <XapFilesInputCollection Include="@(WPKWithTargetPath)"/>
+    </ItemGroup>
+  </Target>
+  
+  <Target Name="AfterClean">
+    <RemoveDir Directories="$(TargetDir)Content\" Condition="Exists('$(TargetDir)Content\')"/>	  
+  </Target>
+  
+</Project>

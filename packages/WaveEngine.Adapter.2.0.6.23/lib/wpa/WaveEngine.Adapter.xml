@@ -1,0 +1,1752 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WaveEngine.Adapter</name>
+    </assembly>
+    <members>
+        <member name="E:WaveEngine.Adapter.Adapter.OnScreenSizeChanged">
+            <summary>
+            Occurs when screen size is changed.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Adapter.CameraCapture">
+            <summary>
+            Gets the camera capture instance
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Adapter.PlatformCpuArchitecture">
+            <summary>
+            Gets the Platform Cpu architecture
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Adapter.ListenersFactory">
+            <summary>
+            Gets the listeners factory.
+            </summary>
+            <value>
+            The listeners factory.
+            </value>
+        </member>
+        <member name="M:WaveEngine.Adapter.Adapter.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Adapter.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="T:WaveEngine.Adapter.Graphics.DXDepth">
+            <summary>
+            Render target for DirectX interop.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Graphics.DXDepth.disposed">
+            <summary>
+            Holds if the instance has been disposed.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Graphics.DXDepth.DepthView">
+            <summary>
+            Render target view.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Graphics.DXDepth.ResourceView">
+            <summary>
+            Shader resource view.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Graphics.DXDepth.Depth">
+            <summary>
+            Render target texture.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Graphics.DXDepth.NativeDepthView">
+            <summary>
+            Gets the native depth view.
+            </summary>
+            <value>
+            The native depth view.
+            </value>
+        </member>
+        <member name="P:WaveEngine.Adapter.Graphics.DXDepth.NativeResourceView">
+            <summary>
+            Gets the native resource view.
+            </summary>
+            <value>
+            The native resource view.
+            </value>
+        </member>
+        <member name="P:WaveEngine.Adapter.Graphics.DXDepth.NativeTexture">
+            <summary>
+            Gets the native texture.
+            </summary>
+            <value>
+            The native texture.
+            </value>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.DXDepth.#ctor(SharpDX.Direct3D11.Device,SharpDX.Direct3D11.Texture2D)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Adapter.Graphics.DXDepth"/> class.
+            </summary>
+            <param name="d3dDevice">The D3D device.</param>
+            <param name="depthTexture">The depthTexture.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.DXDepth.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.DXDepth.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="F:WaveEngine.Adapter.Graphics.Graphics.shaderManager">
+            <summary>
+            The shader manager
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Graphics.Graphics.disposed">
+            <summary>
+            The disposed.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Graphics.Graphics.ShaderManager">
+            <summary>
+            Gets the shader manager.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.Graphics.BindIndexBuffer(WaveEngine.Common.Graphics.IndexBuffer)">
+            <summary>
+            Binds the index buffer.
+            </summary>
+            <param name="indexBuffer">The index buffer.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.Graphics.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.Graphics.ToPlatformViewMatrix(WaveEngine.Common.Math.Matrix@,WaveEngine.Common.Math.Matrix@)">
+            <summary>
+            Adapt a wave matrix to adapter view matrix
+            </summary>
+            <param name="source">The source matrix</param>
+            <param name="target">Target matrix</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.Graphics.ToShaderMatrix(WaveEngine.Common.Math.Matrix@,WaveEngine.Common.Math.Matrix@)">
+            <summary>
+            Adapt a wave matrix to adapter matrix
+            </summary>
+            <param name="source">The source matrix</param>
+            <param name="target">Target matrix</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.Graphics.ToNativeFormat(WaveEngine.Common.Graphics.PixelFormat)">
+            <summary>
+            Wave Pixel format to DX DXGI format
+            </summary>
+            <param name="pixelFormat">Wave pixel format</param>
+            <returns>DXGI format.</returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.Graphics.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources
+            </summary>
+            <param name="disposing">
+            <c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.
+            </param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.Graphics.CalcIndexCount(System.Int32,WaveEngine.Common.Graphics.PrimitiveType)">
+            <summary>
+            Calcs the index count.
+            </summary>
+            <param name="numPrimitives">The num primitives.</param>
+            <param name="primitiveType">Type of the primitive.</param>
+            <returns>Number of primitive indices to draw.</returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.GraphicsHelpers.ToSharpDXVector(WaveEngine.Common.Math.Vector3,SharpDX.Vector3@)">
+            <summary>
+            Transform Wave Vector3 to SharpDX Vector3
+            </summary>
+            <param name="vector">Wave vector</param>
+            <param name="sharpDXVector">SharpDX vector</param>
+        </member>
+        <member name="F:WaveEngine.Adapter.Graphics.HLSLTechnique.VertexBufferFormat">
+            <summary>
+            The vertex buffer format
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Graphics.RenderState.scissorTestEnabled">
+            <summary>
+            The scissor test enabled
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Graphics.RenderState.scissorRectangle">
+            <summary>
+            The scissor rectangle
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Graphics.RenderState.rasterizerStates">
+            <summary>
+            The rasterizer states
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Graphics.RenderState.CullMode">
+            <summary>
+            Gets or sets the cull mode.
+            </summary>
+            <value>
+            The cull mode.
+            </value>
+        </member>
+        <member name="P:WaveEngine.Adapter.Graphics.RenderState.FillMode">
+            <summary>
+            Gets or sets the Fill mode.
+            </summary>
+            <value>
+            The Fill mode.
+            </value>
+        </member>
+        <member name="P:WaveEngine.Adapter.Graphics.RenderState.DepthBias">
+            <summary>
+            Gets or sets the depth bias.
+            </summary>
+            <value>
+            The depth bias.
+            </value>
+        </member>
+        <member name="P:WaveEngine.Adapter.Graphics.RenderState.DepthMode">
+            <summary>
+            Gets or sets the depth mode.
+            </summary>
+            <value>
+            The depth mode.
+            </value>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.RenderState.OnScreenSizeChanged(System.Object,WaveEngine.Common.Helpers.SizeEventArgs)">
+            <summary>
+            Detect when the screen is resized
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The arguments.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.RenderState.RefreshDefaultViewport">
+            <summary>
+            Refresh the default viewport
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.RenderState.CreateRasterizeState(SharpDX.Direct3D11.Device,WaveEngine.Common.Graphics.CullMode,WaveEngine.Common.Graphics.FillMode,WaveEngine.Common.Graphics.DepthBias)">
+            <summary>
+            Creates the state of the rasterize.
+            </summary>
+            <param name="device">The device.</param>
+            <param name="cullMode">The cull mode.</param>
+            <param name="fillMode">The fill mode.</param>
+            <param name="depthBias">The depth bias.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.RenderState.CreateBlendDescription(SharpDX.Direct3D11.BlendOption,SharpDX.Direct3D11.BlendOption,System.Boolean)">
+            <summary>
+            Creates the blend description.
+            </summary>
+            <param name="sourceBlend">The source blend.</param>
+            <param name="destinationBlend">The destination blend.</param>
+            <param name="isBlendEnabled">if set to <c>true</c> [is blend enabled].</param>
+            <returns></returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.RenderState.Dispose">
+            <summary>
+            Dispose method
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Graphics.RenderState.ScissorTestEnabled">
+            <summary>
+            Gets or sets a value indicating whether scissor test is enabled.
+            </summary>
+            <value>
+              <c>true</c> if scissor test is enabled; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:WaveEngine.Adapter.Graphics.RenderState.ScissorRectangle">
+            <summary>
+            Gets or sets the scissor rectangle.
+            </summary>
+            <value>
+            The scissor rectangle.
+            </value>
+        </member>
+        <member name="P:WaveEngine.Adapter.Graphics.RenderTargetManager.DefaultDepthTexture">
+            <summary>
+            Gets the default depth texture
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Graphics.RenderTargetManager.IsMRTsupported">
+            <summary>
+            Gets a value indicating whether this device has support for MRT (Multi Render Target)
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Graphics.RenderTargetManager.IsDepthAsTextureSupported">
+            <summary>
+            Gets a value indicating whether this device has support for Depth Buffer as texture
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Graphics.RenderTargetManager.DepthTextureHandles">
+            <summary>
+            Gets the dictionary of depth texture handles.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Graphics.RenderTargetManager.depthTextureCount">
+            <summary>
+            Number of depth texture created.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Graphics.RenderTargetManager.RenderTargetActive">
+            <summary>
+            Gets a value indicating whether a render target is active.
+            </summary>
+            <value>
+              <c>true</c> if render target is active otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.RenderTargetManager.PixelFormatSupported(WaveEngine.Common.Graphics.PixelFormat)">
+            <summary>
+            Checks if the specified pixel format is supported by this device
+            </summary>
+            <param name="pixelFormat">The pixel format</param>
+            <returns>If the pixel is supported</returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.RenderTargetManager.CreateRenderTarget(System.Int32,System.Int32,WaveEngine.Common.Graphics.PixelFormat)">
+            <summary>
+            Creates the render target.
+            </summary>
+            <param name="width">The width.</param>
+            <param name="height">The height.</param>
+            <param name="pixelFormat">The pixel format.</param>
+            <returns>
+            The result.
+            </returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.RenderTargetManager.CreateDepthTexture(System.Int32,System.Int32)">
+            <summary>
+            Create a Depth Texture
+            </summary>
+            <param name="width">The width.</param>
+            <param name="height">The height.</param>
+            <returns>The new depth texture</returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.RenderTargetManager.DestroyRenderTarget(WaveEngine.Common.Graphics.RenderTarget)">
+            <summary>
+            Destroys the render target.
+            </summary>
+            <param name="renderTarget">The render target to remove.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.RenderTargetManager.SetRenderTarget(WaveEngine.Common.Graphics.RenderTarget[])">
+            <summary>
+            Sets the render target.
+            </summary>
+            <param name="renderTarget">The render target.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.RenderTargetManager.SetRenderTarget(WaveEngine.Common.Graphics.DepthTexture,WaveEngine.Common.Graphics.RenderTarget[])">
+            <summary>
+            Sets the render target.
+            </summary>
+            <param name="depthTexture">The depth texture</param>
+            <param name="renderTargets">The render target.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.RenderTargetManager.DestroyDepthTexture(WaveEngine.Common.Graphics.DepthTexture)">
+            <summary>
+            Destroys the depth texture.
+            </summary>
+            <param name="depthTexture">The depth texture to remove.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.RenderTargetManager.DepthFromHandle``1(System.UInt32)">
+            <summary>
+            Depth from handle.
+            </summary>
+            <typeparam name="T">Type of the depth texture.</typeparam>
+            <param name="handle">The handle.</param>
+            <returns>The Depth.</returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.RenderTargetManager.GetData(WaveEngine.Common.Graphics.RenderTarget)">
+            <summary>
+            Gets the rendertarget data.
+            </summary>
+            <param name="renderTarget">RenderTarget object</param>
+            <returns>Buffer of the data</returns>
+        </member>
+        <member name="T:WaveEngine.Adapter.Graphics.ShaderManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Graphics.ShaderManager.cachedTechnique">
+            <summary>
+            The chached technique
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Graphics.ShaderManager.cachedMaterial">
+            <summary>
+            The cached material
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.ShaderManager.CreateTechnique(WaveEngine.Common.Graphics.Effect,System.String,System.Byte[],System.Byte[],WaveEngine.Common.Graphics.VertexBufferFormat,System.String[],System.String[])">
+            <summary>
+            Creates the technique.
+            </summary>
+            <param name="parentEffect">The parent effect.</param>
+            <param name="techniqueName">Name of the technique.</param>
+            <param name="vsSource">The vs source.</param>
+            <param name="psSource">The ps source.</param>
+            <param name="vbLayout">The vb layout.</param>
+            <param name="vertexShaderSymbols">The technique preprocessor symbols</param>
+            <param name="pixelShaderSymbols">The pixel shader technique preprocessor symbols</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.ShaderManager.CreateTechnique(WaveEngine.Common.Graphics.Effect,System.String,System.String,System.String,WaveEngine.Common.Graphics.VertexBufferFormat,System.String[],System.String[])">
+            <summary>
+            Creates the technique.
+            </summary>
+            <param name="parentEffect">The parent effect.</param>
+            <param name="techniqueName">Name of the technique.</param>
+            <param name="vsSource">The vs source.</param>
+            <param name="psSource">The ps source.</param>
+            <param name="vbLayout">The vb layout.</param>
+            <param name="vertexShaderSymbols">The technique preprocessor symbols</param>
+            <param name="pixelShaderSymbols">The pixel shader technique preprocessor symbols</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.ShaderManager.TechniqueExists(WaveEngine.Common.Graphics.Effect,System.String)">
+            <summary>
+            Techniques the exists.
+            </summary>
+            <param name="effect">The effect.</param>
+            <param name="techniqueName">Name of the technique.</param>
+            <returns>true if the technique exists.</returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.ShaderManager.GetShaderTechniqueFormat(WaveEngine.Common.Graphics.Effect,System.String)">
+            <summary>
+            Return the shaderTechnique.
+            </summary>
+            <param name="effect">The effect.</param>
+            <param name="techniqueName">Name of the technique.</param>
+            <returns>The vertex format associated to the technique.</returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.ShaderManager.ResetCachedMaterial">
+            <summary>
+            Resets the cached material.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.ShaderManager.ApplyEffect(WaveEngine.Common.Graphics.Effect)">
+            <summary>
+            Applies the effect.
+            </summary>
+            <param name="effect">The effect.</param>
+        </member>
+        <member name="P:WaveEngine.Adapter.Graphics.TextureManager.TextureHandles">
+            <summary>
+            Gets the texture handles.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Graphics.TextureManager.textureCount">
+            <summary>
+            Number of textures created.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Graphics.TextureManager.adapter">
+            <summary>
+            Parent adapter.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.TextureManager.#ctor(WaveEngine.Adapter.Adapter)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Adapter.Graphics.TextureManager"/> class.
+            </summary>
+            <param name="adapter">The adapter.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.TextureManager.SetData(WaveEngine.Common.Graphics.Texture,System.Byte[])">
+            <summary>
+            Fill a texture with the data byte array passes as parameter.
+            </summary>
+            <param name="texture">Texture to update.</param>
+            <param name="data">The byte array.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.TextureManager.SetData(WaveEngine.Common.Graphics.Texture,System.IntPtr,System.Int32)">
+            <summary>
+            Fill a texture using a data pointer passes by parameters.
+            </summary>
+            <param name="texture">Texture to update.</param>
+            <param name="dataPointer">The data pointer.</param>
+            <param name="sizeInBytes">Amout of bytes to copy.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.TextureManager.GetData(WaveEngine.Common.Graphics.Texture)">
+            <summary>
+            Gets the texture data.
+            </summary>
+            <param name="texture">Texture object</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.TextureManager.DestroyTexture(WaveEngine.Common.Graphics.Texture)">
+            <summary>
+            Destroys the texture.
+            </summary>
+            <param name="texture">The texture.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.TextureManager.TextureFromHandle``1(System.UInt32)">
+            <summary>
+            Textures from handle.
+            </summary>
+            <typeparam name="T">Tyep of the returned texture.</typeparam>
+            <param name="handle">The handle.</param>
+            <returns>Texture from handle.</returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Graphics.TextureManager.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Guide.Guide.ShowMessageBoxAsync(System.String,System.String)">
+            <summary>
+            Show an OK/Cancel message box asyncronously 
+            </summary>
+            <param name="title">The messagebox title</param>
+            <param name="description">The messagebox description</param>
+            <returns>The index of the option selected</returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Guide.Guide.ShowTextDialogBoxAsync(System.String,System.String,System.String)">
+            <summary>
+            Show a text dialog box asynchronously
+            </summary>
+            <param name="title">The messagebox title</param>
+            <param name="description">The messagebox description</param>
+            <param name="defaultText">The default text in the text box</param>
+            <returns>The text writed in the dialog. Null if the user cancel the dialog</returns>
+        </member>
+        <member name="T:WaveEngine.Adapter.Input.AccelerometerListener">
+            <summary>
+            Accelerometer listener
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Input.AccelerometerListener.accelerometer">
+            <summary>
+            The accelerometer
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Input.AccelerometerListener.smoothing">
+            <summary>
+            Smoothing rate; larger numbers cause more smoothing. The default
+            should be fine for most applications.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Input.AccelerometerListener.sensorError">
+            <summary>
+            Empirically determined error in accelerometer readings. It seems
+            to be off by a constant offset.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Input.AccelerometerListener.state">
+            <summary>
+            The state
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Input.AccelerometerListener.disposed">
+            <summary>
+            The disposed
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.AccelerometerListener.Exist">
+            <summary>
+            Exists this instance.
+            </summary>
+            <returns>
+            True if accelerometer exist.
+            </returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.AccelerometerListener.Register">
+            <summary>
+            Registers the events.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.AccelerometerListener.Unregister">
+            <summary>
+            Uns the register events.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.AccelerometerListener.GetState">
+            <summary>
+            Gets the state.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.AccelerometerListener.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.AccelerometerListener.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="T:WaveEngine.Adapter.Input.CompassListener">
+            <summary>
+            Compass Listener
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Input.CompassListener.compass">
+            <summary>
+            The compass
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Input.CompassListener.state">
+            <summary>
+            The state
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Input.CompassListener.disposed">
+            <summary>
+            The disposed
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.CompassListener.Unregister">
+            <summary>
+            Unregisters this instance.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.CompassListener.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.CompassListener.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="F:WaveEngine.Adapter.Input.MotionSensorListener.motion">
+            <summary>
+            The motion api sensor
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Input.MotionSensorListener.state">
+            <summary>
+            The state
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Input.MotionSensorListener.disposed">
+            <summary>
+            The disposed
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Input.MotionSensorListener.orientationFix">
+            <summary>
+            Orientation fix quaternion
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.MotionSensorListener.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Adapter.Input.GyroscopeListener"/> class.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.MotionSensorListener.GetState">
+            <summary>
+            Gets the gyroscope state.
+            </summary>
+            <returns>
+            Gyroscope state
+            </returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.MotionSensorListener.Exist">
+            <summary>
+            Exists this instance.
+            </summary>
+            <returns>
+            True if sensor exist, false in other case
+            </returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.MotionSensorListener.Register">
+            <summary>
+            Registers this instance.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.MotionSensorListener.Unregister">
+            <summary>
+            Unregisters this instance.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.MotionSensorListener.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.MotionSensorListener.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="F:WaveEngine.Adapter.Input.GyroscopeListener.gyroscope">
+            <summary>
+            The gyroscope
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Input.GyroscopeListener.state">
+            <summary>
+            The state
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Input.GyroscopeListener.disposed">
+            <summary>
+            The disposed
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.GyroscopeListener.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Adapter.Input.GyroscopeListener"/> class.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.GyroscopeListener.GetState">
+            <summary>
+            Gets the gyroscope state.
+            </summary>
+            <returns>
+            Gyroscope state
+            </returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.GyroscopeListener.Exist">
+            <summary>
+            Exists this instance.
+            </summary>
+            <returns>
+            True if sensor exist, false in other case
+            </returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.GyroscopeListener.Register">
+            <summary>
+            Registers this instance.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.GyroscopeListener.Gyroscope_CurrentValueChanged(System.Object,Microsoft.Devices.Sensors.SensorReadingEventArgs{Microsoft.Devices.Sensors.GyroscopeReading})">
+            <summary>
+            Handles the CurrentValueChanged event of the gyroscope control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:Microsoft.Devices.Sensors.SensorReadingEventArgs`1"/> instance containing the event data.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.GyroscopeListener.Unregister">
+            <summary>
+            Unregisters this instance.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.GyroscopeListener.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.GyroscopeListener.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.InputManager.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Adapter.Input.InputManager"/> class.
+            </summary>
+        </member>
+        <member name="T:WaveEngine.Adapter.Input.ListenerFactoryWP">
+            <summary>
+            Sensor FActory for Windows Phone
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Input.ListenerFactoryWP.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Common.Input.ListenerFactory"/> class.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.IO.IOManager.Location">
+            <summary>
+            Gets or sets the location.
+            </summary>
+            <value>
+            The location.
+            </value>
+        </member>
+        <member name="M:WaveEngine.Adapter.IO.IOManager.OpenContentFile(System.String)">
+            <summary>
+            Opens the content file.
+            </summary>
+            <param name="path">The path.</param>
+            <returns>
+            The result.
+            </returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.IO.IOManager.ExistsContentFile(System.String)">
+            <summary>
+            Determines whether the specified file exists.
+            </summary>
+            <param name="path">The path.</param>
+            <returns>
+            true is file exists
+            </returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.IO.IOManager.CreateStorageFile(System.String)">
+            <summary>
+            Creates the storage file.
+            </summary>
+            <param name="path">The path.</param>
+            <returns>
+            The result.
+            </returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.IO.IOManager.OpenStorageFile(System.String,WaveEngine.Common.IO.FileMode)">
+            <summary>
+            Opens the storage file.
+            </summary>
+            <param name="path">The path.</param>
+            <param name="mode">The mode.</param>
+            <returns>
+            The result.
+            </returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.IO.IOManager.OpenStorageFile(System.String,WaveEngine.Common.IO.FileMode,WaveEngine.Common.IO.FileAccess)">
+            <summary>
+            Opens the storage file.
+            </summary>
+            <param name="path">The path.</param>
+            <param name="mode">The mode.</param>
+            <param name="access">The access.</param>
+            <returns>
+            The result.
+            </returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.IO.IOManager.DeleteStorageFile(System.String)">
+            <summary>
+            Deletes the storage file.
+            </summary>
+            <param name="path">The path.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.IO.IOManager.MoveStorageFile(System.String,System.String)">
+            <summary>
+            Moves the storage file.
+            </summary>
+            <param name="oldPath">The old path.</param>
+            <param name="newPath">The new path.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.IO.IOManager.ExistsStorageFile(System.String)">
+            <summary>
+            Existses the storage file.
+            </summary>
+            <param name="path">The path.</param>
+            <returns>
+            The result.
+            </returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.IO.IOManager.GetFileNames(System.String)">
+            <summary>
+            Gets the file names.
+            </summary>
+            <param name="searchPattern">A search pattern that supports single-character ("?") and multicharacter ("*") wildcards.</param>
+            <returns>
+            The result.
+            </returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.IO.IOManager.CreateDirectory(System.String)">
+            <summary>
+            Creates the directory.
+            </summary>
+            <param name="directoryName">Name of the directory.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.IO.IOManager.DeleteDirectory(System.String)">
+            <summary>
+            Deletes the directory.
+            </summary>
+            <param name="directoryName">Name of the directory.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.IO.IOManager.DirectoryExists(System.String)">
+            <summary>
+            Directories the exists.
+            </summary>
+            <param name="directoryName">Name of the directory.</param>
+            <returns>
+            The result.
+            </returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.IO.IOManager.GetContentFileNames(System.String)">
+            <summary>
+            Gets the file names under this content path.
+            </summary>
+            <param name="path">The path.</param>
+            <returns>A list of the existing files under this path.</returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.IO.IOManager.GetContentDirectories(System.String)">
+            <summary>
+            Gets the directory names under this content path.
+            </summary>
+            <param name="path">The path.</param>
+            <returns>A list of the existing directories under this content path.</returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.IO.IOManager.GetCreationTime(System.String)">
+            <summary>
+            Gets the creation time.
+            </summary>
+            <param name="path">The path.</param>
+            <returns>
+            The result.
+            </returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.IO.IOManager.GetDirectoryNames(System.String)">
+            <summary>
+            Gets the directory names.
+            </summary>
+            <param name="searchPattern">The search pattern.</param>
+            <returns>
+            The result.
+            </returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.IO.IOManager.GetRGBABytes(System.IO.Stream,System.Int32@,System.Int32@)">
+            <summary>
+            Gets the rgba bytes from an image stream.
+            </summary>
+            <param name="imageStream">The source image stream.</param>
+            <param name="imageWidth">The width of the image in pixels</param>
+            <param name="imageHeight">The height of the image in pixels</param>
+            <returns>An array containing the premultiplied RGBA bytes of the raw image</returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.IO.IOManager.SavePictureToLibrary(System.String)">
+            <summary>
+            Saves the picture to library.
+            </summary>
+            <param name="path">The path.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.IO.IOManager.SavePictureToLibrary(System.String,System.IO.Stream)">
+            <summary>
+            Saves the picture to library.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <param name="fileStream">The file stream.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.IO.IOManager.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.CameraCapture.adapter">
+            <summary>
+            Android Adapter
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:WaveEngine.Adapter.Media.CameraCapture.captureDevice" -->
+        <member name="F:WaveEngine.Adapter.Media.CameraCapture.isInitialized">
+            <summary>
+            Camera capture is initialized
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.CameraCapture.pixelBuffer">
+            <summary>
+            The pixel buffer
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.CameraCapture.pixelBufferMutex">
+            <summary>
+            The pixel buffer mutex
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.CameraCapture.refreshVideoTexture">
+            <summary>
+            The refresh video texture
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.CameraCapture.resourceRegion">
+            <summary>
+            The resource region
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.CameraCapture.finalPath">
+            <summary>
+            The final path
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.CameraCapture.fileStream">
+            <summary>
+            The video recording file stream
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.CameraCapture.PreviewTexture">
+            <summary>
+            Gets preview texture
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.CameraCapture.State">
+            <summary>
+            Gets camera State
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.CameraCapture.IsConnected">
+            <summary>
+            Gets a value indicating whether camera is available
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.CameraCapture.#ctor(WaveEngine.Adapter.Adapter)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Adapter.Media.CameraCapture"/> class.
+            </summary>
+            <param name="adapter">WP adapter.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.CameraCapture.Start(WaveEngine.Common.Media.CameraCaptureType)">
+            <summary>
+            Start capture preview
+            </summary>
+            <param name="cameraType">camera type</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.CameraCapture.Stop">
+            <summary>
+            Stops the camera capture.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.CameraCapture.StartRecording(System.String)">
+            <summary>
+            Start record camera to file
+            </summary>
+            <param name="videoFilePath">path of the file to record</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.CameraCapture.StopRecording">
+            <summary>
+            Stop recording the camera
+            </summary>
+            <returns>stored video path</returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.CameraCapture.Update(System.TimeSpan)">
+            <summary>
+            Update camera
+            </summary>
+            <param name="gameTime">Game time</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.CameraCapture.Dispose">
+            <summary>
+            Dispose camera
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.CameraCapture.Initialize">
+            <summary>
+            Initialize video player
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.CameraCapture.CreateTexture(Windows.Foundation.Size)">
+            <summary>
+            Creates the texture.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.CameraCapture.PreviewFrameAvailable(Windows.Phone.Media.Capture.ICameraCaptureDevice,System.Object)">
+            <summary>
+            Process a new camera frame.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The args.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.CameraCapture.StartAsync(WaveEngine.Common.Media.CameraCaptureType)">
+            <summary>
+            Starts video capture asynchronously.
+            </summary>
+            <param name="cameraType">Type of the camera.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.CameraCapture.StopRecordingAsync">
+            <summary>
+            Stops the recording asyncronously.
+            </summary>
+        </member>
+        <member name="T:WaveEngine.Adapter.Media.MediaFoundation.MediaPlayer">
+            <summary>
+            A Media Player. This is a port of the C++ "Media engine native C++ video playback sample".
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.MediaFoundation.MediaPlayer.onComplete">
+            <summary>
+            Internal complete event handler
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Adapter.Media.MediaFoundation.MediaPlayer.OnComplete">
+            <summary>
+            Event fired when the video play os completed
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.MediaFoundation.MediaPlayer.IsPlaying">
+            <summary>
+            Gets whether this media player is playing a video or audio.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.MediaFoundation.MediaPlayer.BackgroundColor">
+            <summary>
+            Gets or sets the background color used to display the video.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.MediaFoundation.MediaPlayer.Url">
+            <summary>
+            Gets or sets the url used to play the stream.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.MediaFoundation.MediaPlayer.IsLooped">
+            <summary>
+            Gets or sets the loop flag
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.MediaFoundation.MediaPlayer.OutputVideoTexture">
+            <summary>
+            Output Video texture (must be <see cref="F:SharpDX.DXGI.Format.B8G8R8A8_UNorm"/>)
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.MediaFoundation.MediaPlayer.Play">
+            <summary>
+            Plays the audio/video.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.MediaFoundation.MediaPlayer.Pause">
+            <summary>
+            Pauses the audio/video.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.MediaFoundation.MediaPlayer.Volume">
+            <summary>
+            Gets or sets the volume.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.MediaFoundation.MediaPlayer.Muted">
+            <summary>
+            Gets or sets the Muted.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.MediaFoundation.MediaPlayer.Balance">
+            <summary>
+            Gets or sets the balance.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.MediaFoundation.MediaPlayer.Mute">
+            <summary>
+            Gets or sets muted mode.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.MediaFoundation.MediaPlayer.FrameStep(System.Boolean)">
+            <summary>
+            Steps forward or backward one frame.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.MediaFoundation.MediaPlayer.Duration">
+            <summary>
+            Gets the duration of the audio/video.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.MediaFoundation.MediaPlayer.CanSeek">
+            <summary>
+            Gets a boolean indicating whether the audio/video is seekable.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.MediaFoundation.MediaPlayer.PlaybackPosition">
+            <summary>
+            Gets or sets the playback position.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.MediaFoundation.MediaPlayer.IsSeeking">
+            <summary>
+            Gets a boolean indicating whether the audio/video is seeking.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.Microphone.IsRecording">
+            <summary>
+            Gets if the microphone is currently recording
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.Microphone.IsConnected">
+            <summary>
+            Gets a value indicating whether there is a microphone on the device.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.Microphone.OnBufferReady(System.Object,System.EventArgs)">
+            <summary>
+            Receive the sound from the microphone and store it in the buffer
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.Microphone.DestroyRecordedSound">
+            <summary>
+            Delete the recorded sound ( if any )
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.MusicPlayer.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.MusicPlayer.OnActivated">
+            <summary>
+            Called when service activated.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.MusicPlayer.OnDeactivated">
+            <summary>
+            Called when service deactivated.
+            </summary>
+        </member>
+        <member name="T:WaveEngine.Adapter.Media.SoundEffect">
+            <summary>
+            Represents a sound effect.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundEffect.Xaudio2">
+            <summary>
+            XAudio2 object.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundEffect.X3dAudio">
+            <summary>
+            X3DAudio object
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundEffect.MasteringVoice">
+            <summary>
+            The mastering voice
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundEffect.Buffer">
+            <summary>
+            Audio buffer object.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundEffect.SoundBase">
+            <summary>
+            SoundBase instance.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundEffect.SoundFormat">
+            <summary>
+            Format of the WAV sound.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundEffect.DecodedPackets">
+            <summary>
+            Decoded WAV data.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundEffect.#ctor(SharpDX.XAudio2.XAudio2,SharpDX.XAudio2.MasteringVoice)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Adapter.Media.SoundEffect"/> class.
+            </summary>
+            <param name="xaudio2">The xaudio2.</param>
+            <param name="masteringVoice">The mastering voice.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundEffect.Initialize(WaveEngine.Common.Media.SoundBase)">
+            <summary>
+            Initializes the specified sound.
+            </summary>
+            <param name="sound">The sound.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundEffect.CreateInstance">
+            <summary>
+            Creates the instance.
+            </summary>
+            <returns>New sound instance.</returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundEffect.Play(System.Single,System.Single,System.Boolean)">
+            <summary>
+            Plays the specified volume.
+            </summary>
+            <param name="volume">The volume.</param>
+            <param name="pan">The pan.</param>
+            <param name="looped">if set to <c>true</c> [looped].</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundEffect.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:WaveEngine.Adapter.Media.SoundEffectInstance">
+            <summary>
+            An instance of a SoundEffect.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundEffectInstance.SoundEffect">
+            <summary>
+            Parent SoundEffect.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundEffectInstance.Voice">
+            <summary>
+            XAudio2 SourceVoice.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundEffectInstance.emitter">
+            <summary>
+            X3D Sound Emitter
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundEffectInstance.listener">
+            <summary>
+            X3D Sound Listener
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundEffectInstance.dspSettings">
+            <summary>
+            DSP settings
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundEffectInstance.volume">
+            <summary>
+            Volume value.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundEffectInstance.pan">
+            <summary>
+            Pan value
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.SoundEffectInstance.Volume">
+            <summary>
+            Gets or sets the volume.
+            </summary>
+            <value>
+            The volume.
+            </value>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.SoundEffectInstance.Pan">
+            <summary>
+            Gets or sets the pan.
+            </summary>
+            <value>
+            The pan.
+            </value>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.SoundEffectInstance.IsLooped">
+            <summary>
+            Gets or sets a value indicating whether this instance is looped.
+            </summary>
+            <value>
+              <c>true</c> if this instance is looped; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.SoundEffectInstance.State">
+            <summary>
+            Gets the state.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundEffectInstance.#ctor(WaveEngine.Adapter.Media.SoundEffect)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Adapter.Media.SoundEffectInstance"/> class.
+            </summary>
+            <param name="soundEffect">The sound effect.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundEffectInstance.Play">
+            <summary>
+            Plays this instance.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundEffectInstance.Voice_StreamEnd">
+            <summary>
+            Stream end callback.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundEffectInstance.Pause">
+            <summary>
+            Pauses this instance.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundEffectInstance.Resume">
+            <summary>
+            Resumes this instance.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundEffectInstance.Stop">
+            <summary>
+            Stops this instance.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundEffectInstance.Apply3D(WaveEngine.Common.Media.SoundEmitter,WaveEngine.Common.Media.SoundListener)">
+            <summary>
+            Apply 3D effects to the specified sound effect instance
+            </summary>
+            <param name="soundEmitter">The sound emitter</param>
+            <param name="soundListener">The sound listener</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundEffectInstance.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundEffectInstance.ApplyVolume(System.Single)">
+            <summary>
+            Applies the volume.
+            </summary>
+            <param name="volume">The volume.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundEffectInstance.ApplyPan(System.Single)">
+            <summary>
+            Applies the pan.
+            </summary>
+            <param name="pan">The pan.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundEffectInstance.ComputePanMatrix(System.Int32,System.Int32,System.Single)">
+            <summary>
+            Computes the pan matrix.
+            </summary>
+            <param name="srcChannels">The source channels.</param>
+            <param name="dstChannels">The DST channels.</param>
+            <param name="pan">The pan.</param>
+            <returns>The pan matrix.</returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundEffectInstance.OnBufferEnd(System.IntPtr)">
+            <summary>
+            Called when [buffer end].
+            </summary>
+            <param name="obj">The obj.</param>
+        </member>
+        <member name="T:WaveEngine.Adapter.Media.SoundManager">
+            <summary>
+            Manages everything related to sounds.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundManager.FloatMin">
+            <summary>
+            Minimum float value
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundManager.soundCount">
+            <summary>
+            Number of sounds created.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundManager.instanceCount">
+            <summary>
+            Number of instances created.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundManager.xaudio2">
+            <summary>
+            XAudio2 object.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundManager.x3dAudio">
+            <summary>
+            X3DAudio object
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundManager.disposed">
+            <summary>
+            Wether this instance has been disposed.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundManager.masteringVoice">
+            <summary>
+            XAudio2 mastering voice.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundManager.soundHandles">
+            <summary>
+            Dictionary of sound handles.
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.SoundManager.instanceHandles">
+            <summary>
+            Dictionary of instance handles.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundManager.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Adapter.Media.SoundManager"/> class.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundManager.UploadSound(WaveEngine.Common.Media.SoundBase)">
+            <summary>
+            Uploads the sound.
+            </summary>
+            <param name="sound">The sound.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundManager.UploadSound(WaveEngine.Common.Media.SoundBase,System.IO.Stream,System.Int32,System.UInt32@)">
+            <summary>
+            Uploads the sound by a stream.
+            </summary>
+            <param name="sound">The sound</param>
+            <param name="stream">The stream</param>
+            <param name="sampleRate">The sample rate.</param>
+            <param name="soundHandle">The sound handle.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundManager.DestroySound(WaveEngine.Common.Media.SoundBase)">
+            <summary>
+            Destroys the sound.
+            </summary>
+            <param name="sound">The sound.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundManager.CreateInstance(WaveEngine.Common.Media.SoundBase)">
+            <summary>
+            Creates the instance.
+            </summary>
+            <param name="sound">The sound.</param>
+            <returns>
+            The result.
+            </returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundManager.DestroyInstance(WaveEngine.Common.Media.SoundInstance)">
+            <summary>
+            Destroys the instance.
+            </summary>
+            <param name="instance">The instance.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundManager.PlayInstance(WaveEngine.Common.Media.SoundInstance)">
+            <summary>
+            Plays the instance.
+            </summary>
+            <param name="instance">The instance.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundManager.PauseInstance(WaveEngine.Common.Media.SoundInstance)">
+            <summary>
+            Pauses the instance.
+            </summary>
+            <param name="instance">The instance.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundManager.InstanceState(WaveEngine.Common.Media.SoundInstance)">
+            <summary>
+            Instances the state.
+            </summary>
+            <param name="instance">The instance.</param>
+            <returns>
+            The result.
+            </returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundManager.StopInstance(WaveEngine.Common.Media.SoundInstance)">
+            <summary>
+            Stops the instance.
+            </summary>
+            <param name="instance">The instance.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundManager.UpdateInstanceSettings(WaveEngine.Common.Media.SoundInstance)">
+            <summary>
+            Updates the instance settings.
+            </summary>
+            <param name="instance">The instance.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundManager.Apply3D(WaveEngine.Common.Media.SoundInstance,WaveEngine.Common.Media.SoundEmitter,WaveEngine.Common.Media.SoundListener)">
+            <summary>
+            Apply 3D effects to the specified sound effect instance
+            </summary>
+            <param name="instance">The sound instance</param>
+            <param name="emitter">The sound emitter</param>
+            <param name="listener">The sound listener</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundManager.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundManager.Enable3DAudio">
+            <summary>
+            Enable 3d audio
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.SoundManager.Dispose(System.Boolean)">
+            <summary>
+            Dispose the asset container.
+            </summary>
+            <param name="disposing">If set to <c>true</c> disposing.</param>
+        </member>
+        <member name="T:WaveEngine.Adapter.Media.VideoInfo">
+            <summary>
+            Video info instance
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.VideoInfo.Duration">
+            <summary>
+            Gets the duration of the video.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.VideoInfo.Width">
+            <summary>
+            Gets the width of this video, in pixels.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.VideoInfo.Height">
+            <summary>
+            Gets the height of this video, in pixels.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.VideoInfo.Path">
+            <summary>
+            Gets the path of this video.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.VideoInfo.IsInitialized">
+            <summary>
+            Gets or sets the initialized flag
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.VideoInfo.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Adapter.Media.VideoInfo"/> class.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.VideoInfo.Dispose">
+            <summary>
+            Dispose video info instance
+            </summary>
+        </member>
+        <member name="T:WaveEngine.Adapter.Media.VideoPlayer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.VideoPlayer.isInitialized">
+            <summary>
+            indicates if video player is initialized
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.VideoPlayer.isPendingInitialization">
+            <summary>
+            indicates if its necessary to initialize Video Player
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.VideoPlayer.adapter">
+            <summary>
+            Wave adapter for Windows platform
+            </summary>
+        </member>
+        <member name="F:WaveEngine.Adapter.Media.VideoPlayer.video">
+            <summary>
+            Current Video info instance
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.VideoPlayer.BackgroundColor">
+            <summary>
+            Gets or sets the background color used to display the video.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.VideoPlayer.IsPlaying">
+            <summary>
+            Gets whether this media player is playing a video or audio.
+            </summary>
+        </member>
+        <member name="P:WaveEngine.Adapter.Media.VideoPlayer.IsVideoSupported">
+            <summary>
+            Gets a value indicating whether Video texture is supported on this device
+            </summary>
+        </member>
+        <member name="E:WaveEngine.Adapter.Media.VideoPlayer.OnComplete">
+            <summary>
+            Event fired when the video play os completed
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.VideoPlayer.#ctor(WaveEngine.Adapter.Adapter)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngine.Adapter.Media.VideoPlayer"/> class.
+            </summary>
+            <param name="adapter">WinRT adapter.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.VideoPlayer.Play(WaveEngine.Common.Media.IVideoInfo)">
+            <summary>
+            Plays the video.
+            </summary>
+            <param name="video">video info instance.</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.VideoPlayer.Pause">
+            <summary>
+            Pauses the currently playing video.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.VideoPlayer.Resume">
+            <summary>
+            Resumes a paused video.
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.VideoPlayer.Stop">
+            <summary>
+            Stops playing a video
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.VideoPlayer.VideoInfoFromPath(System.String)">
+            <summary>
+            Get video info from path
+            </summary>
+            <param name="path">video path</param>
+            <returns>platform specific video info</returns>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.VideoPlayer.Update(System.TimeSpan)">
+            <summary>
+            Update video player
+            </summary>
+            <param name="gameTime">game time</param>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.VideoPlayer.Dispose">
+            <summary>
+            Release resources of Video Player
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.VideoPlayer.Initialize">
+            <summary>
+            Lazy initialization of VideoPlayer
+            </summary>
+        </member>
+        <member name="M:WaveEngine.Adapter.Media.VideoPlayer.CreateTexture">
+            <summary>
+            Create video texture
+            </summary>
+        </member>
+        <member name="T:WaveEngineWP.Adapter.Guide.InAppPurchase">
+            <summary>
+            In App purchase implementation for Windows Phone
+            </summary>
+        </member>
+        <member name="F:WaveEngineWP.Adapter.Guide.InAppPurchase.products">
+            <summary>
+            The products
+            </summary>
+        </member>
+        <member name="M:WaveEngineWP.Adapter.Guide.InAppPurchase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WaveEngineWP.Adapter.Guide.InAppPurchase" /> class.
+            </summary>
+        </member>
+        <member name="M:WaveEngineWP.Adapter.Guide.InAppPurchase.Initialize(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Initialize the store with the given properties
+            </summary>
+            <param name="properties">Store properties</param>
+            <returns>If the store is</returns>
+        </member>
+        <member name="M:WaveEngineWP.Adapter.Guide.InAppPurchase.RequestProductsAsync(System.Collections.Generic.List{System.String})">
+            <summary>
+            Requests to store the products async.
+            </summary>
+            <param name="productIds">Product id list</param>
+            <returns>
+            Complete product list
+            </returns>
+        </member>
+        <member name="M:WaveEngineWP.Adapter.Guide.InAppPurchase.RequestProductPurchaseAsync(System.String)">
+            <summary>
+            Requests to store the product purchase async.
+            </summary>
+            <param name="productId">The product id.</param>
+            <returns>
+            if user acepted product pruchase
+            </returns>
+        </member>
+        <member name="M:WaveEngineWP.Adapter.Guide.InAppPurchase.RequestReceiptAsync(System.String)">
+            <summary>
+            Requests to store the receipt of a product async.
+            </summary>
+            <param name="productId">The product id.</param>
+            <returns>
+            the receipt
+            </returns>
+        </member>
+        <member name="M:WaveEngineWP.Adapter.Guide.InAppPurchase.ReportConsumablePurchased(System.String)">
+            <summary>
+            Report to store after consumable product purchased
+            </summary>
+            <param name="productId">The product id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:WaveEngineWP.Adapter.Guide.InAppPurchase.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+    </members>
+</doc>
